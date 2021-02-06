@@ -7,7 +7,6 @@ const HomeScreen = () => {
     <div className="homeScreen">
       <NavigationBar />
       <Banner />
-
       {/* Row */}
     </div>
   );
