@@ -1,4 +1,5 @@
 import React from "react";
+import { Animated } from "react-animated-css";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import { auth } from "../../firebase";
@@ -13,7 +14,9 @@ const ProfileScreen = () => {
     <div className="profileScreen">
       <NavigationBar />
       <div className="profileScreen__body">
-        <h1>Edit Profile</h1>
+        <Animated animationIn="slideInLeft" isVisible={true}>
+          <h1>Edit Profile</h1>
+        </Animated>
         <div className="profileScreen__info">
           <img
             src="http://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"

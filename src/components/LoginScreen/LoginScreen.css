@@ -6,17 +6,18 @@
   background-size: cover;
 }
 
-.loginScreen__body > h1 {
+.loginScreen__lineOne {
   font-size: 3.125rem;
   margin-bottom: 20px;
 }
-.loginScreen__body > h2 {
+
+.loginScreen__lineTwo {
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 30px;
 }
 
-.loginScreen__body > h3 {
+.loginScreen__lineThree {
   font-size: 1.3rem;
   font-weight: 400;
 }
