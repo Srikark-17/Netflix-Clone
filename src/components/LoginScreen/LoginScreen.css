@@ -79,6 +79,7 @@
   width: 30%;
   border: none;
   max-width: 600px;
+  outline: none;
 }
 
 .loginScreen__getStarted {

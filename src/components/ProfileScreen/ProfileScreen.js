@@ -28,9 +28,9 @@ const ProfileScreen = () => {
               <h2>{user.email}</h2>
               <div className="profileScreen__plans">
                 <h3>
-                  {!userSubscriptionRole
-                    ? `Plans`
-                    : `Plans (Current Plan: ${userSubscriptionRole?.subscriptionRole})`}
+                  {userSubscriptionRole
+                    ? `Plans: (Current Plan: ${userSubscriptionRole?.subscriptionRole})`
+                    : `Plans`}
                 </h3>
                 <PlansScreen />
                 <button

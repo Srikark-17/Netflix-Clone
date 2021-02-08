@@ -13,9 +13,6 @@ const SignUpScreen = () => {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then((authUser) => {
-        console.log(authUser);
-      })
       .catch((e) => alert(e.message));
   };
 
@@ -26,9 +23,6 @@ const SignUpScreen = () => {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then((authUser) => {
-        console.log(authUser);
-      })
       .catch((e) => alert(e.message));
   };
 
