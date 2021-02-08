@@ -1,14 +1,15 @@
 import React from "react";
 import { Animated } from "react-animated-css";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import { selectUser, selectRole } from "../../features/userSlice";
 import { auth } from "../../firebase";
-import NavigationBar from "../HomeScreen/NavigationBar/NavigationBar";
+import NavigationBar from "../NavigationBar/NavigationBar";
 import PlansScreen from "./PlansScreen/PlansScreen";
 import "./ProfileScreen.css";
 
 const ProfileScreen = () => {
   const user = useSelector(selectUser);
+  const userSubscriptionRole = useSelector(selectRole);
 
   return (
     <div className="profileScreen">
@@ -17,25 +18,31 @@ const ProfileScreen = () => {
         <Animated animationIn="slideInLeft" isVisible={true}>
           <h1>Edit Profile</h1>
         </Animated>
-        <div className="profileScreen__info">
-          <img
-            src="http://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
-            alt="User Avatar"
-          />
-          <div className="profileScreen__details">
-            <h2>{user.email}</h2>
-            <div className="profileScreen__plans">
-              <h3>Plans</h3>
-              <PlansScreen />
-              <button
-                onClick={() => auth.signOut()}
-                className="profileScreen__signOut"
-              >
-                Sign Out
-              </button>
+        <Animated animationIn="slideInUp" isVisible={true}>
+          <div className="profileScreen__info">
+            <img
+              src="http://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+              alt="User Avatar"
+            />
+            <div className="profileScreen__details">
+              <h2>{user.email}</h2>
+              <div className="profileScreen__plans">
+                <h3>
+                  {!userSubscriptionRole
+                    ? `Plans`
+                    : `Plans (Current Plan: ${userSubscriptionRole?.subscriptionRole})`}
+                </h3>
+                <PlansScreen />
+                <button
+                  onClick={() => auth.signOut()}
+                  className="profileScreen__signOut"
+                >
+                  Sign Out
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </Animated>
       </div>
     </div>
   );

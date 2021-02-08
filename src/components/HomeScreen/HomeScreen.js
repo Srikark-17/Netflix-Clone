@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "./NavigationBar/NavigationBar";
+import NavigationBar from "../NavigationBar/NavigationBar";
 import Banner from "./Banner/Banner";
 import Row from "./Row/Row";
 import requests from "../../fetchAPI/requests/Requests";
