@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import axios from "../../../fetchAPI/axios/axios";
 import requests from "../../../fetchAPI/requests/Requests";
+import TypeWriter from "react-typewriter";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
@@ -19,8 +20,6 @@ const Banner = () => {
 
     fetchData();
   }, []);
-
-  console.log(movie);
 
   const truncate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -43,7 +42,7 @@ const Banner = () => {
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
-          {truncate(movie?.overview, 150)}
+          <TypeWriter typing={1}>{truncate(movie?.overview, 150)}</TypeWriter>
         </h1>
       </div>
       <div className="banner--fadeBottom" />

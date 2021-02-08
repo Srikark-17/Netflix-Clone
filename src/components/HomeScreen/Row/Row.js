@@ -35,6 +35,7 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
               />
             )
         )}
+        <div className="overlay" />
       </div>
     </div>
   );

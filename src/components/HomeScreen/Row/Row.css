@@ -31,3 +31,24 @@
 .row__posterLarge {
   max-height: 250px;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  display: none;
+  border-radius: 12px;
+  animation: fade-in ease 0.38s;
+}
+
+@keyframes fade-in {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
