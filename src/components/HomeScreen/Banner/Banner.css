@@ -36,6 +36,12 @@
   );
 }
 
+.banner__buttons {
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .banner__button {
   color: #fff;
   cursor: pointer;
@@ -49,6 +55,8 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: rgba(51, 51, 51, 0.5);
+  display: flex;
+  align-items: center;
 }
 
 .banner__button:hover {

@@ -3,6 +3,8 @@ import "./Banner.css";
 import axios from "../../../fetchAPI/axios/axios";
 import requests from "../../../fetchAPI/requests/Requests";
 import TypeWriter from "react-typewriter";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
@@ -38,11 +40,17 @@ const Banner = () => {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner__buttons">
-          <button className="banner__button">Play</button>
-          <button className="banner__button">My List</button>
+          <button className="banner__button">
+            <PlayArrowIcon />
+            Play
+          </button>
+          <button className="banner__button">
+            <InfoOutlinedIcon />
+            More Info
+          </button>
         </div>
         <h1 className="banner__description">
-          <TypeWriter typing={1}>{truncate(movie?.overview, 150)}</TypeWriter>
+          <TypeWriter typing={1.8}>{truncate(movie?.overview, 200)}</TypeWriter>
         </h1>
       </div>
       <div className="banner--fadeBottom" />
