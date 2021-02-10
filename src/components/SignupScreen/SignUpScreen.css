@@ -47,6 +47,11 @@
   margin-top: 20px;
 }
 
+.signupScreen__facebook {
+  align-self: flex-start;
+  border-top: 1px solid white;
+}
+
 .signupScreen__link:hover {
   cursor: pointer;
   text-decoration: underline;

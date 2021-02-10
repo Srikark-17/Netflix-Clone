@@ -1,54 +1,96 @@
 .row {
-  color: #fff;
+  display: block;
   margin-left: 20px;
+  margin-right: 40px;
 }
 
-.row__posters {
+.row h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-top: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.row__horizontal {
+  position: relative;
+  width: 100%;
+}
+
+.row__item--container {
   display: flex;
-  overflow-y: hidden;
   overflow-x: scroll;
+  margin: 16px 0;
   padding: 20px;
 }
 
-.row__posters::-webkit-scrollbar {
+.row__item--container::-webkit-scrollbar {
+  display: none;
+}
+
+.row__item {
+  width: 28vw;
+  max-width: 299px;
+  list-style-type: none;
+  margin-right: 10px;
+  display: inline-table;
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.row__itemLarge {
+  width: 19vw;
+  margin-right: -40px;
+}
+
+.row__item a {
+  color: #fff;
+  width: 299px;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.row__itemLarge a > .title__name {
+  /* text-align: center; */
   display: none;
 }
 
 .row__poster {
-  max-height: 100px;
-  object-fit: contain;
-  margin-right: 10px;
+  height: 170px;
+  max-height: 180px;
   width: 100%;
   transition: transform 450ms;
+  border-radius: 4;
 }
 
 .row__poster:hover {
   transform: scale(1.09);
-  opacity: 1;
-  cursor: pointer;
 }
 
 .row__posterLarge {
-  max-height: 250px;
+  max-height: 500px;
+  height: 450px;
+  width: 70%;
+  border-radius: 4;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6) !important;
-  display: none;
-  border-radius: 12px;
-  animation: fade-in ease 0.38s;
+.row__posterLarge:hover {
+  transform: scale(1.09);
 }
 
-@keyframes fade-in {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+.placeholder--title {
+  background-color: #333;
+  display: inline-block;
+}
+
+.title__name {
+  color: #fff;
+  display: block;
+  margin-top: 4px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }

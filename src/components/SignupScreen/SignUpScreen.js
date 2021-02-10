@@ -1,10 +1,17 @@
 import React, { useRef } from "react";
 import { auth } from "../../firebase";
 import "./SignUpScreen.css";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import firebase from "firebase";
 
 const SignUpScreen = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+
+  const uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [firebase.auth.FacebookAuthProvider.PROVIDER_ID],
+  };
 
   const register = (e) => {
     e.preventDefault();
@@ -35,6 +42,7 @@ const SignUpScreen = () => {
         <button type="submit" onClick={signIn}>
           Sign In
         </button>
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
         <h4>
           <span className="signupScreen__gray">New to Netflix?</span>{" "}
           <span className="signupScreen__link" onClick={register}>
