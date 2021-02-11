@@ -46,17 +46,22 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
-              <img
-                onClick={() =>
-                  setOpen(movie?.title || movie?.name || movie?.original_name)
-                }
-                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                key={movie.id}
-                src={`${base_url}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt={movie.name}
-              />
+              <>
+                <img
+                  onClick={() =>
+                    setOpen(movie?.title || movie?.name || movie?.original_name)
+                  }
+                  className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                  key={movie.id}
+                  src={`${base_url}${
+                    isLargeRow ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt={movie.name}
+                />
+                <div className="overlay">
+                  <h1 className="text">{movie.name}</h1>
+                </div>
+              </>
             )
         )}
       </div>
