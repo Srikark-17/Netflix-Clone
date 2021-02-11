@@ -58,9 +58,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                   }`}
                   alt={movie.name}
                 />
-                <div className="overlay">
-                  <h1 className="text">{movie.name}</h1>
-                </div>
+                <h1 className="text">
+                  {movie?.title || movie?.name || movie?.original_name}
+                </h1>
               </>
             )
         )}
