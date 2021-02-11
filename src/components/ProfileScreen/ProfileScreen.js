@@ -32,7 +32,9 @@ const ProfileScreen = () => {
                     ? `Plans: (Current Plan: ${userSubscriptionRole?.subscriptionRole})`
                     : `Plans`}
                 </h3>
-                <PlansScreen />
+                <Animated animationIn="slideInDown" isVisible={true}>
+                  <PlansScreen />
+                </Animated>
                 <button
                   onClick={() => auth.signOut()}
                   className="profileScreen__signOut"

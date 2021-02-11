@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Overlay.css";
 import CloseIcon from "@material-ui/icons/Close";
 import ReactPlayer from "react-player/youtube";

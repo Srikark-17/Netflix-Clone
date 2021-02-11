@@ -37,6 +37,10 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     fetchData();
   }, [fetchUrl]);
 
+  const truncate = (string, n) => {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  };
+
   return (
     <div className="row">
       {isOpen && <Overlay videoOverlay selected={selected} close={closeOpen} />}
@@ -46,11 +50,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
-              <>
+              <div className="container">
                 <img
-                  onClick={() =>
-                    setOpen(movie?.title || movie?.name || movie?.original_name)
-                  }
                   className={`row__poster ${isLargeRow && "row__posterLarge"}`}
                   key={movie.id}
                   src={`${base_url}${
@@ -58,10 +59,25 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                   }`}
                   alt={movie.name}
                 />
-                <h1 className="text">
-                  {movie?.title || movie?.name || movie?.original_name}
-                </h1>
-              </>
+                <div className="text">
+                  <h1
+                    className={`row__posterName ${
+                      isLargeRow && "row__posterLargeName"
+                    }`}
+                  >
+                    {movie?.title || movie?.name || movie?.original_name}
+                  </h1>
+                  <p
+                    className={`row__posterDescription ${
+                      isLargeRow && "row__posterLarge"
+                    }`}
+                  >
+                    {isLargeRow
+                      ? truncate(movie?.overview, 135)
+                      : truncate(movie?.overview, 50)}
+                  </p>
+                </div>
+              </div>
             )
         )}
       </div>

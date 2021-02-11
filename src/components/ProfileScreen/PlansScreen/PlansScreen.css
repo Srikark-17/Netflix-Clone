@@ -22,3 +22,19 @@
 .plansScreen__plan--disabled > button {
   background-color: #808080;
 }
+
+.plansScreen__loadingCircle {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: solid 0.3rem;
+  border-color: #e50914 #ffffff16 #ffffff16;
+  animation: spin 1.2s infinite ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
