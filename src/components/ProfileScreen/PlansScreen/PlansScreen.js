@@ -117,7 +117,6 @@ const PlansScreen = () => {
           </div>
         );
       })}
-      <div className="plansScreen__loadingCircle" />
     </div>
   );
 };

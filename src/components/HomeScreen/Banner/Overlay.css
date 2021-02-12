@@ -1,11 +1,11 @@
 .overlay {
-  width: 200%;
+  width: 100vw;
   position: fixed;
   top: 0;
   margin: 0;
+  margin-left: -17px;
   padding: 0;
-  margin-left: -20px;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 999;
 }

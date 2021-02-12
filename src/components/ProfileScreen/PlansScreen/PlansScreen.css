@@ -25,12 +25,16 @@
 
 .plansScreen__loadingCircle {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
-  border: solid 0.3rem;
-  border-color: #e50914 #ffffff16 #ffffff16;
+  border: solid 0.2rem;
+  border-color: #fff #ffffff16 #ffffff16;
   animation: spin 1.2s infinite ease-in-out;
+}
+
+.plansScreen__none {
+  display: none;
 }
 
 @keyframes spin {

@@ -5,7 +5,6 @@ import ReactPlayer from "react-player/youtube";
 import { IconButton } from "@material-ui/core";
 
 const Overlay = ({ close, selected, videoOverLay }) => {
-  console.log(selected);
   return (
     <div className="overlay">
       <div className="overlay__header">

@@ -14,12 +14,10 @@ const Banner = () => {
   const [selected, setSelected] = useState("");
 
   const closeOpen = () => {
-    console.log("CLOSING");
     setIsOpen(false);
   };
 
   const setOpen = (movieName) => {
-    // setSelected(movieName);
     movieTrailer(movieName)
       .then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search);
@@ -73,7 +71,7 @@ const Banner = () => {
               }
             >
               <PlayArrowIcon />
-              Play
+              <p>Play</p>
             </button>
             <button className="banner__button">
               <InfoOutlinedIcon />
