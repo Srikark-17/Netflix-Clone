@@ -75,7 +75,7 @@ const Banner = () => {
             </button>
             <button className="banner__button">
               <InfoOutlinedIcon />
-              More Info
+              <p>More info</p>
             </button>
           </div>
           <h1 className="banner__description">

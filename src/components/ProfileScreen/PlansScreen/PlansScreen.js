@@ -10,6 +10,7 @@ const PlansScreen = () => {
   const user = useSelector(selectUser);
   const [subscription, setSubscription] = useState(null);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     db.collection("customers")
@@ -52,6 +53,7 @@ const PlansScreen = () => {
   }, []);
 
   const loadCheckout = async (priceId) => {
+    setLoading(true);
     const docRef = await db
       .collection("customers")
       .doc(user.uid)
@@ -79,6 +81,7 @@ const PlansScreen = () => {
           "pk_test_51IIJK5LjgVDZOTcFQKLLAjSgQ6PfRIS6cQLNhCI2WgdbvN7qDATYrhC3vdBt800BX75PAx3eugqQk16YV3ZiTXyr007sK9O0EN"
         );
         stripe.redirectToCheckout({ sessionId });
+        setLoading(false);
       }
     });
   };
@@ -112,7 +115,11 @@ const PlansScreen = () => {
                 !isCurrentPackage && loadCheckout(productData.prices.priceId)
               }
             >
-              {isCurrentPackage ? `Current Package` : `Subscribe`}
+              {!loading ? (
+                <div>{isCurrentPackage ? `Current Package` : `Subscribe`}</div>
+              ) : (
+                <div className="plansScreen__loadingCircle" />
+              )}
             </button>
           </div>
         );

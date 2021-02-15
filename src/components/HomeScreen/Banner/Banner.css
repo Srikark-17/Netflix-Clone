@@ -60,6 +60,10 @@
   justify-content: space-around !important;
 }
 
+.banner__button > p {
+  margin-left: 4px;
+}
+
 .banner__button:hover {
   color: #000;
   background-color: #e6e6e6;
