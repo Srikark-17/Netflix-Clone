@@ -4,10 +4,10 @@ import CloseIcon from "@material-ui/icons/Close";
 import ReactPlayer from "react-player/youtube";
 import { IconButton } from "@material-ui/core";
 
-const Overlay = ({ close, selected, videoOverLay }) => {
+const Overlay = ({ close, selected }) => {
   return (
-    <div className="overlay">
-      <div className="overlay__header">
+    <div className="overlayBanner">
+      <div className="overlayBanner__header">
         <IconButton
           style={{ background: "rgba(46,50,50,0.8)" }}
           onClick={() => close()}
