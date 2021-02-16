@@ -15,6 +15,7 @@
     "movie-trailer": "^2.1.0",
     "react": "^17.0.1",
     "react-animated-css": "^1.2.1",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^17.0.1",
     "react-firebaseui": "^4.1.0",
     "react-player": "^2.8.2",

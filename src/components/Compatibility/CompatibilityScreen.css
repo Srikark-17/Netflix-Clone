@@ -1,0 +1,100 @@
+.compatibilityScreen {
+  position: relative;
+  height: 100%;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg")
+    center no-repeat;
+  background-size: cover;
+}
+
+.compatibilityScreen__body {
+  position: absolute;
+  top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+  left: 0;
+  right: 0;
+}
+
+.compatibilityScreen__gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+.compatibilityScreen__logo {
+  position: fixed;
+  left: 0;
+  width: 130px;
+  margin-left: 20px;
+  object-fit: contain;
+}
+
+.compatibilityScreen__glass {
+  max-width: 300px;
+  padding: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+}
+
+.compatibilityScreen__glass > form > h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.compatibilityScreen__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compatibilityScreen__icons .MuiSvgIcon-root {
+  font-size: 40px !important;
+}
+
+.compatibilityScreen__glass > form > h3 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.compatibilityScreen__instagram,
+.compatibilityScreen__linkedin {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.compatibilityScreen__instagram img,
+.compatibilityScreen__linkedin img {
+  width: 40px;
+  height: 40px;
+}
+
+.compatibilityScreen__instagram h3,
+.compatibilityScreen__linkedin h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.compatibilityScreen__glass > form > a {
+  text-decoration: none;
+}

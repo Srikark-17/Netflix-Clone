@@ -4,6 +4,7 @@
   margin-right: auto;
   margin-left: auto;
   background: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
 }
 
 .signupScreen > form > h1 {

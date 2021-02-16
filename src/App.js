@@ -10,6 +10,8 @@ import "./App.css";
 import HomeScreen from "./components/HomeScreen/HomeScreen";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 import ProfileScreen from "./components/ProfileScreen/ProfileScreen";
+import CompatibilityScreen from "./components/Compatibility/CompatibilityScreen";
+import { isBrowser, isMobile } from "react-device-detect";
 import { login, logout, selectUser, selectRole } from "./features/userSlice";
 import { auth } from "./firebase";
 
@@ -35,23 +37,11 @@ function App() {
     return unsubscribe;
   }, []);
 
-  //   <Route
-  // exact
-  // path="/"
-  // render={() => {
-  //     return (
-  //       this.state.isUserAuthenticated ?
-  //       <Redirect to="/home" /> :
-  //       <Redirect to="/test1" />
-  //     )
-  // }}
-  // />
-
   return (
     <div className="app">
       <Router>
         {!user ? (
-          <LoginScreen />
+          <CompatibilityScreen />
         ) : (
           <Switch>
             <Route
