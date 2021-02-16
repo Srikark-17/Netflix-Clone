@@ -65,10 +65,10 @@ function App() {
                 );
               }}
             />
-            <Route path="/profile">
+            <Route exact path="/profile">
               <ProfileScreen />
             </Route>
-            <Route path="/home">
+            <Route exact path="/home">
               <HomeScreen />
             </Route>
           </Switch>
