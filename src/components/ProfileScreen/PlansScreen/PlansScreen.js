@@ -98,12 +98,14 @@ const PlansScreen = () => {
         </p>
       )}
       {Object.entries(products).map(([productId, productData]) => {
-        const isCurrentPackage = productData.name.includes(subscription?.role);
+        const isCurrentSubscription = productData.name.includes(
+          subscription?.role
+        );
         return (
           <div
             key={productId}
             className={`${
-              isCurrentPackage && "plansScreen__plan--disabled"
+              isCurrentSubscription && "plansScreen__plan--disabled"
             } plansScreen__plan`}
           >
             <div className="plansScreen__info">
@@ -112,11 +114,14 @@ const PlansScreen = () => {
             </div>
             <button
               onClick={() =>
-                !isCurrentPackage && loadCheckout(productData.prices.priceId)
+                !isCurrentSubscription &&
+                loadCheckout(productData.prices.priceId)
               }
             >
               {!loading ? (
-                <div>{isCurrentPackage ? `Current Package` : `Subscribe`}</div>
+                <div>
+                  {isCurrentSubscription ? `Current Subscription` : `Subscribe`}
+                </div>
               ) : (
                 <div className="plansScreen__loadingCircle" />
               )}
