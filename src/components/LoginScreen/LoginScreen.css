@@ -59,6 +59,7 @@
   font-weight: 600;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .loginScreen__logo {
@@ -88,6 +89,7 @@
   color: #fff;
   background-color: #e50914;
   border: none;
+  outline: none;
   font-weight: 600;
   cursor: pointer;
 }

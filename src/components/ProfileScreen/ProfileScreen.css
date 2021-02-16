@@ -60,4 +60,5 @@
   cursor: pointer;
   font-weight: 600;
   border: none;
+  outline: none;
 }
