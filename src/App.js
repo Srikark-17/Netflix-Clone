@@ -11,7 +11,7 @@ import HomeScreen from "./components/HomeScreen/HomeScreen";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 import ProfileScreen from "./components/ProfileScreen/ProfileScreen";
 import CompatibilityScreen from "./components/Compatibility/CompatibilityScreen";
-import { isBrowser, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { login, logout, selectUser, selectRole } from "./features/userSlice";
 import { auth } from "./firebase";
 
@@ -39,31 +39,35 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        {!user ? (
-          <CompatibilityScreen />
-        ) : (
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return !userSubscriptionRole ? (
-                  <Redirect to="/profile" />
-                ) : (
-                  <Redirect to="/home" />
-                );
-              }}
-            />
-            <Route exact path="/profile">
-              <ProfileScreen />
-            </Route>
-            <Route exact path="/home">
-              <HomeScreen />
-            </Route>
-          </Switch>
-        )}
-      </Router>
+      {isMobile ? (
+        <CompatibilityScreen />
+      ) : (
+        <Router>
+          {!user ? (
+            <LoginScreen />
+          ) : (
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => {
+                  return !userSubscriptionRole ? (
+                    <Redirect to="/profile" />
+                  ) : (
+                    <Redirect to="/home" />
+                  );
+                }}
+              />
+              <Route exact path="/profile">
+                <ProfileScreen />
+              </Route>
+              <Route exact path="/home">
+                <HomeScreen />
+              </Route>
+            </Switch>
+          )}
+        </Router>
+      )}
     </div>
   );
 }
