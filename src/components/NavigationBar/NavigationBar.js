@@ -27,7 +27,7 @@ const NavigationBar = () => {
       <div className="nav__contents">
         <img
           onClick={() => {
-            userSubscriptionRole && history.push("/");
+            userSubscriptionRole && history.push("/home");
           }}
           src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt="Netflix Logo"
