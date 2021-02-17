@@ -11,7 +11,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("");
   const closeOpen = () => {
-    console.log("CLOSING");
     setIsOpen(false);
   };
   const setOpen = (movieName) => {

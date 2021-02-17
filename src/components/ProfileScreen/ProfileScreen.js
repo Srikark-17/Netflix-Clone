@@ -18,7 +18,7 @@ const ProfileScreen = () => {
         <Animated animationIn="slideInLeft" isVisible={true}>
           <h1>Edit Profile</h1>
         </Animated>
-        <Animated animationIn="slideInUp" isVisible={true}>
+        <Animated animationIn="slideInDown" isVisible={true}>
           <div className="profileScreen__info">
             <img
               src="http://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
@@ -32,9 +32,7 @@ const ProfileScreen = () => {
                     ? `Plans: (Current Plan: ${userSubscriptionRole?.subscriptionRole})`
                     : `Plans`}
                 </h3>
-                <Animated animationIn="slideInDown" isVisible={true}>
-                  <PlansScreen />
-                </Animated>
+                <PlansScreen />
                 <button
                   onClick={() => auth.signOut()}
                   className="profileScreen__signOut"
