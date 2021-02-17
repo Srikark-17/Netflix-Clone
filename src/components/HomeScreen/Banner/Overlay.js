@@ -25,6 +25,8 @@ const Overlay = ({ close, selected }) => {
           controls={true}
           light
           url={`https://www.youtube.com/watch?v=${selected}`}
+          width={1450}
+          height={840}
         />
       </div>
     </div>

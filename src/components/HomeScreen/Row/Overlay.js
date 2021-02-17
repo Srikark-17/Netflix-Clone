@@ -5,7 +5,6 @@ import ReactPlayer from "react-player/youtube";
 import { IconButton } from "@material-ui/core";
 
 const Overlay = ({ close, selected }) => {
-  console.log(selected);
   return (
     <div className="overlayRow">
       <div className="overlayRow__header">
@@ -16,7 +15,6 @@ const Overlay = ({ close, selected }) => {
           <CloseIcon fontSize="large" style={{ fill: "#fff" }} />
         </IconButton>
       </div>
-
       <div className="videoContainer">
         <h4>
           {selected === "Hs-1_HNALhw" &&
@@ -26,6 +24,8 @@ const Overlay = ({ close, selected }) => {
           controls={true}
           light
           url={`https://www.youtube.com/watch?v=${selected}`}
+          width={1450}
+          height={840}
         />
       </div>
     </div>
