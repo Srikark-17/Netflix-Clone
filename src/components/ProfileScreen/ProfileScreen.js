@@ -15,7 +15,11 @@ const ProfileScreen = () => {
     <div className="profileScreen">
       <NavigationBar />
       <div className="profileScreen__body">
-        <Animated animationIn="slideInLeft" isVisible={true}>
+        <Animated
+          animationIn="slideInLeft"
+          animationInDelay={140}
+          isVisible={true}
+        >
           <h1>Edit Profile</h1>
         </Animated>
         <Animated animationIn="slideInDown" isVisible={true}>
