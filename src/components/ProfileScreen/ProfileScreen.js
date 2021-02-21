@@ -29,7 +29,7 @@ const ProfileScreen = () => {
               alt="User Avatar"
             />
             <div className="profileScreen__details">
-              <h2>{user.email}</h2>
+              <h2>{user?.email}</h2>
               <div className="profileScreen__plans">
                 <h3>
                   {userSubscriptionRole

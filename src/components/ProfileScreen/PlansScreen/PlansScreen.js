@@ -14,7 +14,7 @@ const PlansScreen = () => {
 
   useEffect(() => {
     db.collection("customers")
-      .doc(user.uid)
+      .doc(user?.uid)
       .collection("subscriptions")
       .get()
       .then((querySnapshot) => {
@@ -30,7 +30,7 @@ const PlansScreen = () => {
           );
         });
       });
-  }, [user.uid]);
+  }, [user?.uid]);
 
   useEffect(() => {
     db.collection("products")

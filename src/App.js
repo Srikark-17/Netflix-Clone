@@ -12,14 +12,15 @@ import LoginScreen from "./components/LoginScreen/LoginScreen";
 import ProfileScreen from "./components/ProfileScreen/ProfileScreen";
 import CompatibilityScreen from "./components/Compatibility/CompatibilityScreen";
 import { isMobile } from "react-device-detect";
-import { login, logout, selectUser, selectRole } from "./features/userSlice";
+import { login, logout, selectRole } from "./features/userSlice";
 import { auth } from "./firebase";
+import Spinner from "react-spinkit";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function App() {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const userSubscriptionRole = useSelector(selectRole);
-
+  const [user, loading] = useAuthState(auth);
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
@@ -36,6 +37,20 @@ function App() {
 
     return unsubscribe;
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app__loading">
+        <div className="app__loadingContents">
+          <img
+            src="https://pngimg.com/uploads/netflix/netflix_PNG15.png"
+            alt="Netflix Logo"
+          />
+          <Spinner name="ball-spin-fade-loader" color="#e50914" fadeIn="none" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
