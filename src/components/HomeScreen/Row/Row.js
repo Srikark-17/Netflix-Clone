@@ -14,7 +14,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     setIsOpen(false);
   };
   const setOpen = (movieName) => {
-    // setSelected(movieName);
     movieTrailer(movieName)
       .then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search);
