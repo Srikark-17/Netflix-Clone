@@ -69,7 +69,9 @@
   width: 150px;
   margin-left: 20px;
   object-fit: contain;
+  margin-top: 20px;
 }
+
 .loginScreen__input {
   margin: 20px;
 }
