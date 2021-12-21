@@ -1,0 +1,43 @@
+[debug] [2021-12-20T18:14:07.480Z] ----------------------------------------------------------------------
+[debug] [2021-12-20T18:14:07.481Z] Command:       /usr/local/bin/node /Users/fxi8754/.config/yarn/global/node_modules/.bin/firebase deploy
+[debug] [2021-12-20T18:14:07.482Z] CLI Version:   9.10.2
+[debug] [2021-12-20T18:14:07.482Z] Platform:      darwin
+[debug] [2021-12-20T18:14:07.482Z] Node Version:  v14.17.0
+[debug] [2021-12-20T18:14:07.483Z] Time:          Mon Dec 20 2021 12:14:07 GMT-0600 (Central Standard Time)
+[debug] [2021-12-20T18:14:07.484Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-12-20T18:14:07.486Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-12-20T18:14:07.519Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-12-20T18:14:07.519Z] > authorizing via signed-in user (srikar.sgk@gmail.com)
+[debug] [2021-12-20T18:14:07.519Z] [iam] checking project netflix-clone-ee61a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-12-20T18:14:07.521Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-12-20T18:14:07.521Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-12-20T18:14:07.610Z] <<< HTTP RESPONSE 400 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 20 Dec 2021 18:14:07 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-12-20T18:14:07.611Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-clone-ee61a:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-12-20T18:14:07.656Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-12-20T18:14:07.656Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-12-20T18:14:07.772Z] <<< HTTP RESPONSE 401 {"www-authenticate":"Bearer realm=\"https://accounts.google.com/\", error=\"invalid_token\"","vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 20 Dec 2021 18:14:07 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=76","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-12-20T18:14:07.773Z] <<< HTTP RESPONSE BODY {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2021-12-20T18:14:07.774Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2021-12-20T18:14:07.775Z] > refreshing access token with scopes: []
+[debug] [2021-12-20T18:14:07.775Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-12-20T18:14:07.828Z] <<< HTTP RESPONSE 400 {"date":"Mon, 20 Dec 2021 18:14:07 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-12-20T18:14:07.829Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-clone-ee61a [none]
+[debug] [2021-12-20T18:14:07.915Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-clone-ee61a 401
+[debug] [2021-12-20T18:14:07.915Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-clone-ee61a {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2021-12-20T18:14:07.915Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2021-12-20T18:14:07.975Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Client.request (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/apiv2.js:96:20)
+    at async Object.getFirebaseProject (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/management/projects.js:290:21)
+    at async Object.getDefaultHostingSite (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/commands/deploy.js:66:9)
+    at async /Users/fxi8754/.config/yarn/global/node_modules/firebase-tools/lib/command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project netflix-clone-ee61a. Please make sure the project exists and your account has permission to access it.

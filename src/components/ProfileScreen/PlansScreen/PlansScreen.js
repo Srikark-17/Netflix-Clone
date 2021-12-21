@@ -40,6 +40,7 @@ const PlansScreen = () => {
         const products = {};
         querySnapshot.forEach(async (productDoc) => {
           products[productDoc.id] = productDoc.data();
+
           const priceSnap = await productDoc.ref.collection("prices").get();
           priceSnap.docs.forEach((price) => {
             products[productDoc.id].prices = {
@@ -53,6 +54,9 @@ const PlansScreen = () => {
   }, []);
 
   const loadCheckout = async (priceId) => {
+    alert(
+      "DO NOT enter your real credit card credentials. THIS IS A FAKE NETFLIX. Keep entering '42' in order to 'buy' a subscription."
+    );
     setLoading(true);
     const docRef = await db
       .collection("customers")
@@ -85,6 +89,8 @@ const PlansScreen = () => {
       }
     });
   };
+
+  console.log(subscription);
 
   return (
     <div className="plansScreen">

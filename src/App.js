@@ -16,6 +16,7 @@ import { login, logout, selectRole } from "./features/userSlice";
 import { auth } from "./firebase";
 import Spinner from "react-spinkit";
 import { useAuthState } from "react-firebase-hooks/auth";
+import PrivacyScreen from "./PrivacyScreen";
 
 function App() {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ function App() {
             src="https://pngimg.com/uploads/netflix/netflix_PNG15.png"
             alt="Netflix Logo"
           />
-          <Spinner name="ball-spin-fade-loader" color="#e50914" fadeIn="none" />
+          <Spinner name="ball-spin-fade-loader" color="#e40b16" fadeIn="none" />
         </div>
       </div>
     );
@@ -75,6 +76,9 @@ function App() {
               />
               <Route exact path="/profile">
                 <ProfileScreen />
+              </Route>
+              <Route exact path="/privacy_policy">
+                <PrivacyScreen />
               </Route>
               <Route exact path="/home">
                 <HomeScreen />

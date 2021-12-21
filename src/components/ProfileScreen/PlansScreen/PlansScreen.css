@@ -13,7 +13,7 @@
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background-color: #e50914;
+  background-color: #e40b16;
   font-weight: 600;
   border: none;
   outline: none;
@@ -38,6 +38,10 @@
 
 .plansScreen__none {
   display: none;
+}
+
+.plansScreen__info {
+  cursor: default;
 }
 
 @keyframes spin {

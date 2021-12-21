@@ -49,6 +49,10 @@ const SignUpScreen = () => {
             Sign Up now.
           </span>
         </h4>
+        <br />
+        <span className="signUpScreen__warning">
+          DO NOT enter your real credentials! This is not the real Netflix!
+        </span>
       </form>
     </div>
   );
